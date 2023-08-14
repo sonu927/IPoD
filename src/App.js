@@ -12,13 +12,14 @@ class App extends React.Component {
     this.temp_selected = 0;
     this.state = {
       options : ['Games','Songs','Settings','CoverFlow'],
-      selectedOption: 0
+      selectedOption: 0,//index of current active option
+      showPage: -1 //index of which page to show
     }
   }
   componentDidMount(){
     let zt = new ZingTouch.Region(document.getElementsByClassName('btn-container')[0]);
     zt.bind(document.getElementsByClassName('btn-container')[0],'rotate',(event)=>{
-      if(document.getElementsByClassName('menu-container')[0].classList.contains('show')){
+      if(document.getElementsByClassName('menu-container')[0].classList.contains('show')){ //allow rotate gesture only when menu is visible
         let dist = event.detail.distanceFromLast;
         this.change_in_angle += dist;
         if(this.change_in_angle > 60){
@@ -44,12 +45,27 @@ class App extends React.Component {
     });
   }
   menuBtnClick = ()=>{
-    let showMenuClassList = document.getElementsByClassName('menu-container')[0].classList;
-    if(showMenuClassList.contains('show')){
-      $('.menu-container').removeClass('show');
+    if(this.state.showPage !== -1){ //back to home when different page is showing on screen
+      this.setState({
+        showPage: -1
+      });
     }else{
-      $('.menu-container').addClass('show')
+      let showMenuClassList = document.getElementsByClassName('menu-container')[0].classList;
+      if(showMenuClassList.contains('show')){
+        $('.menu-container').removeClass('show');
+      }else{
+        $('.menu-container').addClass('show')
+      }
     }
+    
+  }
+  selectBtnClicked = ()=>{ //select button click handler
+    this.setState({
+      showPage: this.state.selectedOption,
+      selectedOption: 0
+    });
+    this.temp_selected = 0;
+    this.menuBtnClick();
   }
 
   render(){
@@ -59,10 +75,12 @@ class App extends React.Component {
           <Screen 
             MenuOptions = {this.state.options} 
             selectedOption = {this.state.selectedOption}
+            showPage = {this.state.showPage}
           />
 
           <Buttons 
             OnMenuClick = {this.menuBtnClick}
+            OnSelectClick = {this.selectBtnClicked}
           />
         </div>
       </div>

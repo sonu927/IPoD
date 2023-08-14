@@ -7,13 +7,15 @@
 }
 
 .frame{
-  background-color: silver;
-  width: 400px;
-  height: 550px;
+  background: linear-gradient(to right,gray 0%,lightgray 5%,lightgray 10%,lightgray 20%,lightgray 30%,
+  lightgray 40%,lightgray 50%,lightgray 60%,lightgray 70%,lightgray 80%,lightgray 90%,lightgray 95%,gray 100%);
+  width: 360px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3%;
+  margin-top: 1%;
+  border-radius: 30px;
+  -webkit-box-reflect: below 3px -webkit-gradient(linear, right top, right bottom, from(transparent), to(hsla(0, 0%, 100%, .4)));
 }
-

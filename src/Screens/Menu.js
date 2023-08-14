@@ -3,7 +3,7 @@ import './Menu.css'
 
 class Menu extends React.Component{
     render(){
-        const { MenuOptions,selectedOption } = this.props; 
+        const { MenuOptions,selectedOption } = this.props;  
         return (
             <div className="menu-container">
                 <div className="menu-heading">
