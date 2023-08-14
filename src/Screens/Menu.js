@@ -3,16 +3,18 @@ import './Menu.css'
 
 class Menu extends React.Component{
     render(){
-        const { MenuOptions } = this.props; 
-        console.log(MenuOptions);
+        const { MenuOptions,selectedOption } = this.props; 
         return (
             <div className="menu-container">
-                <p style={{ fontSize:20 }}><b>Menu</b></p>
+                <div className="menu-heading">
+                    <p style={{ fontSize:20 }}><b>Menu</b></p>
+                </div>
+                
                 <hr />
-                { MenuOptions.map((opt)=>{
+                { MenuOptions.map((opt,index)=>{
                    return( 
-                        <div>
-                            <p>{opt}</p>
+                        <div key={index} className={`opt-container ${index===selectedOption?'active':''}`}>
+                            <span >{opt}</span>
                         </div>
                     )
                 }) }

@@ -1,11 +1,33 @@
 .menu-container{
     background-color: white;
     height: 100%;
-    margin-top: -18px;
-    width: 0;
-    transition: width ease 0.2s;
+    width: 0%;
+    visibility: hidden;
+    transition: visibility 0.2s ease-in-out,
+        width 0.2s ease-in-out;
 }
 
 .show{
+    visibility: visible;
     width: 50%;
+}
+
+.active{
+    background-color: lightblue;
+}
+
+.menu-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-heading p{
+    margin: 0;
+}    
+
+.opt-container{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
