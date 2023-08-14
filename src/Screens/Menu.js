@@ -18,7 +18,14 @@ class Menu extends React.Component{
                         </div>
                     )
                 }) }
-
+                {MenuOptions.length === 3?
+                    
+                    <div>
+                        <span>press back to back</span>
+                    </div>
+                :
+                    ''
+                }
             </div>
         )
     }

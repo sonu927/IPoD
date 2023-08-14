@@ -7,4 +7,5 @@
     background-repeat: no-repeat;
     margin-top: 15px;
    outline: 3px solid black;
+   position: relative;
 }

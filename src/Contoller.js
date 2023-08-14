@@ -2,7 +2,7 @@ import React from "react";
 import './Controller.css';
 
 const Buttons = (props) => {
-    const { OnMenuClick,OnSelectClick } = props; //destruct click functions from props
+    const { OnMenuClick,OnSelectClick,OnLeftClick } = props; //destruct click functions from props
     return (
         <div className="btn-container">
             <button className="center-btn" onClick={OnSelectClick}>
@@ -11,7 +11,7 @@ const Buttons = (props) => {
             <button className="top-btn" onClick={OnMenuClick}>
                 <img src="https://cdn-icons-png.flaticon.com/128/2099/2099192.png" alt="menu" />
             </button>
-            <button className="left-btn">
+            <button className="left-btn" onClick={OnLeftClick}>
                <img src="https://cdn-icons-png.flaticon.com/128/3318/3318703.png" alt="back"  />
             </button>
             <button className="right-btn">

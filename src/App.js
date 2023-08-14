@@ -13,7 +13,9 @@ class App extends React.Component {
     this.state = {
       options : ['Games','Songs','Settings','CoverFlow'],
       selectedOption: 0,//index of current active option
-      showPage: -1 //index of which page to show
+      showPage: -1, //index of which page to show
+      general_menu : ['Games','Songs','Settings','CoverFlow'],
+      song_sub_menu : ['All Songs','Artists','Albums']
     }
   }
   componentDidMount(){
@@ -45,27 +47,47 @@ class App extends React.Component {
     });
   }
   menuBtnClick = ()=>{
-    if(this.state.showPage !== -1){ //back to home when different page is showing on screen
-      this.setState({
-        showPage: -1
-      });
-    }else{
+    // if(this.state.showPage !== -1){ //back to home when different page is showing on screen
+    //   this.setState({
+    //     showPage: -1
+    //   });
+    // }else{
       let showMenuClassList = document.getElementsByClassName('menu-container')[0].classList;
       if(showMenuClassList.contains('show')){
         $('.menu-container').removeClass('show');
       }else{
         $('.menu-container').addClass('show')
       }
-    }
+    //}
     
   }
   selectBtnClicked = ()=>{ //select button click handler
+    if(this.state.selectedOption===1 && this.state.options.length === 4){
+      this.setState({
+        options: this.state.song_sub_menu,
+        selectedOption: 0,
+        showPage: -1
+      });
+      this.temp_selected = 0;
+      return;
+    }
+
     this.setState({
       showPage: this.state.selectedOption,
       selectedOption: 0
     });
     this.temp_selected = 0;
     this.menuBtnClick();
+  }
+
+  leftBtnClicked = ()=>{
+    if(this.state.options.length===3 && document.getElementsByClassName('menu-container')[0].classList.contains('show')){
+      this.setState({
+        options: this.state.general_menu,
+        selectedOption: 0
+      });
+      this.temp_selected = 0;
+    }
   }
 
   render(){
@@ -81,6 +103,7 @@ class App extends React.Component {
           <Buttons 
             OnMenuClick = {this.menuBtnClick}
             OnSelectClick = {this.selectBtnClicked}
+            OnLeftClick = {this.leftBtnClicked}
           />
         </div>
       </div>
