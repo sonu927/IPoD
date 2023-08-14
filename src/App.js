@@ -3,6 +3,7 @@ import './App.css';
 import Buttons from './Contoller';
 import Screen from './Screen';
 import ZingTouch from 'zingtouch';
+import $ from 'jquery';
 
 class App extends React.Component {
   constructor(){
@@ -18,6 +19,14 @@ class App extends React.Component {
         console.log(dist);
     });
   }
+  menuBtnClick = ()=>{
+    let showMenuClassList = document.getElementsByClassName('menu-container')[0].classList;
+    if(showMenuClassList.contains('show')){
+      $('.menu-container').removeClass('show');
+    }else{
+      $('.menu-container').addClass('show')
+    }
+  }
 
   render(){
     return (
@@ -27,7 +36,9 @@ class App extends React.Component {
             MenuOptions = {this.state.options}
           />
 
-          <Buttons />
+          <Buttons 
+            OnMenuClick = {this.menuBtnClick}
+          />
         </div>
       </div>
     );

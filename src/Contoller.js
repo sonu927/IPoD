@@ -1,13 +1,14 @@
 import React from "react";
 import './Controller.css';
 
-const Buttons = () => {
+const Buttons = (props) => {
+    const { OnMenuClick } = props;
     return (
         <div className="btn-container">
             <button className="center-btn">
                 <h3>Select</h3>
             </button>   
-            <button className="top-btn">
+            <button className="top-btn" onClick={OnMenuClick}>
                 <img src="https://cdn-icons-png.flaticon.com/128/2099/2099192.png" alt="menu" />
             </button>
             <button className="left-btn">

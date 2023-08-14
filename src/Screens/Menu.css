@@ -1,0 +1,11 @@
+.menu-container{
+    background-color: white;
+    height: 100%;
+    margin-top: -18px;
+    width: 0;
+    transition: width ease 0.2s;
+}
+
+.show{
+    width: 50%;
+}
