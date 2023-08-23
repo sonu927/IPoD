@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAiCkyMi9_bF5uRtyOyWAthSvuGmI7efNI",
-  authDomain: "ipod-633f2.firebaseapp.com",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   projectId: "ipod-633f2",
   storageBucket: "ipod-633f2.appspot.com",
-  messagingSenderId: "131228718824",
-  appId: "1:131228718824:web:6e3733c3d11513e1eadb5d",
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 //initialize firebase

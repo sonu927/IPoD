@@ -71,7 +71,7 @@ class AllSongs extends React.Component {
         <div className="songs-list">
           {this.state.all_songs_list.slice(0, 4).map((item, index) => {
             if (index === 4) {
-              return;
+              return "";
             }
             return (
               <div
