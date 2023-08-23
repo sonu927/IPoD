@@ -1,0 +1,10 @@
+.song-container {
+  background-color: white;
+  height: 100%;
+  margin-top: -21px;
+}
+
+#audio::-webkit-media-controls-panel {
+  background-color: rgba(165, 162, 162, 0.7);
+  border-radius: 8px;
+}
