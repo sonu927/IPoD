@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/IPoD/static/css/main.d3cdd269.css",
+    "main.js": "/IPoD/static/js/main.7bbbec83.js",
+    "static/media/screen-bg.png": "/IPoD/static/media/screen-bg.97995f8753edd2229687.png",
+    "index.html": "/IPoD/index.html",
+    "main.d3cdd269.css.map": "/IPoD/static/css/main.d3cdd269.css.map",
+    "main.7bbbec83.js.map": "/IPoD/static/js/main.7bbbec83.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3cdd269.css",
+    "static/js/main.7bbbec83.js"
+  ]
+}
