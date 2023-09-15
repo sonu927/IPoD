@@ -6,7 +6,8 @@ Simple overview of use/purpose.
 
 This is copy of Ipod which you can use in your browser, and you can use the control wheel of ipod by clicking and holding the mouse and dragging it on wheel to rotate on different option in menu. You can open menu by clicking on menu option and then navigate to different sections by clicking on select button in middle of wheel.You can navigate to songs the All songs to play music and then use music control buttons on wheel to switch music and play pause music.
 
-## Getting Started
+## Check it out on below link
+https://sonu927.github.io/IPoD/
 
 ### Build With
 
